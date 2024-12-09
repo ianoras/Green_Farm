@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Green Farm: Fattoria didattica con alpaca e animali esotici. Visite guidate, passeggiate e prodotti a km 0.">
+  <meta name="author" content="Green Farm Team">
+  <title>Green Farm</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+ <!-- Navbar -->
+ <nav class="navbar">
+    <div class="logo-section">
+     <img src="immagini/logo.jpg" alt="Green Farm Logo" class="logo-nav">
+     <span class="farm-name">Green Farm</span>
+    </div>
+    <button class="hamburger" id="hamburger">
+      <i class="bi bi-list"></i>
+    </button>
+    <ul class="nav-links" id="navLinks">
+    <li><a href="#about">Chi Siamo</a></li>
+    <li><a href="#services">Servizi</a></li>
+    <li><a href="#gallery">Galleria</a></li>
+    <li><a href="#location">Dove Siamo</a></li>
+    <li><a href="#contatti">Contatti</a></li>
+    <li><a href="#booking">Prenota</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="carousel">
+      <div class="carousel-images">
+        <img src="immagini/carosello/alpaca_1.jpg" alt="Fattoria 1" class="carousel-image">
+        <img src="immagini/carosello/alpaca_2.jpg" alt="Fattoria 2" class="carousel-image">
+        <img src="immagini/carosello/alpaca_3.jpg" alt="Fattoria 3" class="carousel-image">
+        <img src="immagini/carosello/alpaca_7.jpeg" alt="Fattoria 4" class="carousel-image">
+        <img src="immagini/carosello/alpaca_5.jpg" alt="Fattoria 5" class="carousel-image">
+        <img src="immagini/carosello/alpaca_6.jpg" alt="Fattoria 6" class="carousel-image">
+        <img src="immagini/carosello/alpaca_4.jpg" alt="Fattoria 7" class="carousel-image">
+      </div>
+      <div class="carousel-text">
+        <h1 class="display-4">Benvenuti nella Green Farm</h1>
+        <p class="lead">Vivi un'esperienza unica nella nostra fattoria didattica</p>
+      </div>
+      
+  </section>
+
+  <!-- Chi Siamo -->
+  <section id="about" class="about">
+    
+    <div class="about-content">
+      <div class="about-image">
+        <img src="immagini/nik/nicola3.jpg" alt="Immagine sinistra">
+      </div>
+      <div class="about-text">
+        <p>
+          La Green Farm nasce dalla passione di un giovane laureato in Agraria, che ha scelto di mettere al centro del suo progetto i valori della sostenibilità e del rispetto per la natura. Grazie all'uso di concimi biologici provenienti dagli alpaca, la nostra fattoria si distingue per un approccio innovativo all’agricoltura e all’allevamento. Insieme alla sua famiglia e alla sua ragazza, dedica anima e corpo a questo luogo speciale, trasformandolo in un’oasi dove natura e animali vivono in perfetta armonia.
+          Oltre agli alpaca, Green Farm è la casa di una straordinaria varietà di animali: vivaci caprette, teneri conigli, eleganti fagiani, maestosi emù, galline di razze pregiate e pavoni dai colori spettacolari. Ogni angolo della fattoria è animato dalla presenza di creature che affascinano e incantano grandi e piccini.
+          Vieni a scoprire un luogo dove la bellezza della natura si unisce alla magia del mondo animale. Green Farm ti aspetta per regalarti un’esperienza unica, fatta di emozioni autentiche, ricordi indelebili e momenti di pura serenità. Prenota la tua visita e lasciati sorprendere dalla meraviglia!
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="immagini/nik/nicola.jpeg" alt="Immagine destra">
+      </div>
+    </div>
+  </section>
+  
+  <!-- Servizi -->
+  <section id="services" class="services">
+    <h2>I Nostri Servizi</h2>
+    <div class="services-container">
+      <div class="service-card">
+        <i class="bi bi-tree"></i>
+        <h3>Passeggiate con Alpaca</h3>
+        <p>Cammina nella natura con i nostri alpaca!</p>
+        <div class="details">
+          <p>Scopri l’emozione di camminare fianco a fianco con questi animali unici. Le nostre passeggiate con gli alpaca sono pensate per regalarti un momento di relax nella natura, ideale per coppie, famiglie o gruppi di amici.</p>
+          <button onclick="scrollToBooking('passeggiate')">Prenota Ora</button>
+        </div>
+      </div>
+      <div class="service-card">
+        <i class="bi bi-camera"></i>
+        <h3>Shooting Fotografico</h3>
+        <p>Scatta foto indimenticabili con gli alpaca e gli altri animali.</p>
+        <div class="details">
+          <p>Grazie alla collaborazione con una fotografa professionista, puoi vivere un'esperienza unica: scatti memorabili con alpaca, pavoni, conigli e molto altro. Perfetto per ricordi di famiglia, book fotografici o sorprese romantiche.</p>
+          <button onclick="scrollToBooking('shooting')">Prenota Ora</button>
+        </div>
+      </div>
+      <div class="service-card">
+        <i class="bi bi-binoculars"></i>
+        <h3>Vieni a Conoscere gli Animali</h3>
+        <p>Scopri la nostra fattoria con una visita guidata.</p>
+        <div class="details">
+          <p>Un tour guidato per conoscere gli animali più curiosi e la vita in fattoria.</p>
+          <button onclick="scrollToBooking('visita-guidata')">Prenota Ora</button>
+        </div>
+      </div>
+      <div class="service-card">
+        <i class="bi bi-basket"></i>
+        <h3>Prodotti a Km 0</h3>
+        <p>Acquista uova fresche e prodotti della terra.</p>
+        <div class="details">
+          <p>Dalla nostra terra alla tua tavola. Offriamo uova fresche di diverse varietà e prodotti agricoli coltivati con amore. Genuinità e qualità sono il nostro marchio di fabbrica.</p>
+          <button onclick="scrollToBooking('vendita-prodotti')">Prenota Ora</button>
+        </div>
+      </div>
+      <div class="service-card">
+        <i class="bi bi-cake"></i>
+        <h3>Feste di Compleanno</h3>
+        <p>Organizza un compleanno indimenticabile immerso nella natura!</p>
+        <div class="details">
+          <p>La Green Farm è la location perfetta per grandi e piccini, con spazi dedicati, animali da conoscere e tanto divertimento.</p>
+          <button onclick="scrollToBooking('festa-compleanno')">Prenota Ora</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galleria -->
+  <section id="gallery" class="gallery">
+    <h2>La Nostra Galleria</h2>
+    <div class="gallery-grid">
+      <img src="immagini/galleria/galleria1.jpg" alt="Fattoria Green Farm" loading="lazy" class="visible">
+      <img src="immagini/galleria/galleria2.jpg" alt="Fattoria Green Farm" loading="lazy" class="visible">
+      <img src="immagini/galleria/galleria3.jpg" alt="Fattoria Green Farm" loading="lazy" class="visible">
+      <img src="immagini/galleria/galleria4.jpg" alt="Fattoria Green Farm" loading="lazy" class="visible">
+      <img src="immagini/galleria/galleria5.jpg" alt="Fattoria Green Farm" loading="lazy" class="visible">
+      <img src="immagini/galleria/galleria6.jpg" alt="Fattoria Green Farm" loading="lazy" class="visible">
+      <img src="immagini/galleria/galleria7.jpg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria8.jpg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria9.jpg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria10.jpg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria11.jpg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria12.jpg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria13.jpg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria14.jpg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria15.jpg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria16.jpg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria17.jpg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria18.jpg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria19.jpg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria20.jpg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria21.jpg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria22.jpg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria23.jpg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria24.jpeg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria25.jpeg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria26.jpeg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria27.jpeg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria28.jpeg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria29.jpeg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria30.jpeg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria31.jpeg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria32.jpeg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria33.jpeg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria34.jpeg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria35.jpeg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria36.jpeg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria37.jpeg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria38.jpeg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria39.jpeg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria40.jpg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria41.jpg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+      <img src="immagini/galleria/galleria42.jpg" alt="Fattoria Green Farm" loading="lazy" class="hidden">
+    </div>
+    <button id="load-more">Mostra Altro</button>
+  </section>
+
+  <!-- Dove Siamo -->
+  <section id="location" class="location">
+    <h2>Dove Siamo<i class="bi bi-geo-alt-fill"></i></h2>
+    <p>La Green Farm si trova all'incorcio tra Via Due Principati & Via Guglielmo Marconi , Montoro (AV)</p>
+    <p>Vieni a trovarci nella nostra fattoria!</p>
+    <div class="map-container">
+      <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3019.0046773008908!2d14.758394775504488!3d40.827860930515385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133bcf37cd0c586b%3A0xa23c1f4df992f608!2sVia%20Guglielmo%20Marconi%20%26%20Via%20Due%20Principati%2C%2083025%20Piano%20AV!5e0!3m2!1sit!2sit!4v1733263252586!5m2!1sit!2sit" 
+      width="100%" 
+      height="100%" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Contatti -->
+  <section id="contatti" class="contacts">
+    <h2>Contatti</h2>
+    <p>Restiamo in contatto! Puoi raggiungerci attraverso i seguenti canali:</p>
+    <ul class="contact-list">
+      <li>
+      <i class="bi bi-envelope"></i>
+      <a href="mailto:tuoindirizzo@example.com">tuoindirizzo@example.com</a>
+      </li>
+      <li>
+      <i class="bi bi-telephone"></i>
+      <a href="tel:+393892077977">+39 389 207 7977</a>
+      </li>
+      <li>
+      <i class="bi bi-instagram"></i>
+      <a href="https://www.instagram.com/greenfarm019?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a>
+      </li>
+      <li>
+      <i class="bi bi-tiktok"></i>
+      <a href="https://www.tiktok.com/@green.farm019?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a>
+      </li>
+    </ul>
+  </section>
+
+  
+
+ <!-- Prenotazione -->
+ <section id="booking" class="booking">
+  <div class="logo logo-left"></div>
+  <div class="logo logo-right"></div>
+  <div class="logo logo-top-left"></div>
+  <div class="logo logo-top-right"></div>
+  <div class="logo logo-bottom-left"></div>
+  <div class="logo logo-bottom-right"></div>
+  <h2>Prenota un'Esperienza</h2>
+  <p>Scegli il servizio che preferisci e prenota direttamente online.</p>
+  <form action="#" method="POST">
+    <label for="service">Servizio:</label>              
+    <select id="service" name="service">
+      <option value="passeggiate">Passeggiate con Alpaca</option>
+      <option value="shooting">Shooting Fotografico</option>
+      <option value="visita-guidata">Visita Guidata</option>
+      <option value="vendita-prodotti">Prodotti a Km 0</option>
+      <option value="festa-compleanno">Festa di Compleanno</option>
+    </select>
+    <label for="date">Data:</label>
+    <input type="date" id="date" name="date" required>
+    <label for="name">Nome:</label>
+    <input type="text" id="name" name="name" required>
+    <button type="submit">Prenota Ora</button>
+    <button type="button" id="contact">Contattaci</button>
+  </form>
+</section>
+
+
+  
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2024 Green Farm. Tutti i diritti riservati.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

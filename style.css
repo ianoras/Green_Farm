@@ -1,0 +1,763 @@
+/* Generale */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html{
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 20px;
+  color: #5a8c5a;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #4c7e4c, #5a8c5a);
+  padding: 5px 15px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Section */
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo-section .logo-nav {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logo-section .farm-name {
+  font-size: 20px;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Nav Links */
+.navbar .nav-links {
+  display: flex;
+  list-style: none;
+  transition: all 0.3s ease-in-out; /* Animazione fluida */
+  opacity: 1; /* Opacità predefinita */
+  transform: translateY(0); /* Posizione iniziale */
+}
+
+.navbar .nav-links li {
+  margin: 0 15px;
+}
+
+.navbar .nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.navbar .nav-links a:hover {
+  color: #4c7e4c;
+  background-color: #fff;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar .nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 40px;
+    left: -20px;
+    background-color: #5a8c5a;
+    z-index: 1;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 8px 8px;
+    transform: translateY(-20px); /* Nascondi sopra inizialmente */
+    opacity: 0; /* Invisibile di default */
+    pointer-events: none; /* Disabilita interazione */
+    transition: all 0.4s ease; /* Aggiungi un'animazione */
+  }
+
+  .navbar.active .nav-links {
+    transform: translateY(0); /* Porta il menu nella posizione corretta */
+    opacity: 1; /* Rendi visibile */
+    pointer-events: auto; /* Riattiva interazione */
+  }
+
+  .navbar .nav-links li {
+    margin: 10px 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  overflow: hidden;
+  height: 100vh; /* Occupiamo tutta l'altezza della pagina */
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-images {
+  display: flex;
+  animation: slide 72s infinite linear; 
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.carousel-text {
+  position: absolute;
+  color: white;
+  text-align: center;
+  z-index: 2;
+  width: 100%;
+}
+
+.carousel-text h1 {
+  font-size: 3rem;
+  position: absolute;
+  top: 5%; /* Posiziona l'h1 più in alto, puoi regolare la percentuale */
+  left: 50%;
+  transform: translate(-50%, -380%); /* Centrato orizzontalmente e più in alto sull'asse Y */
+  background: rgba(0, 0, 0, 0.5); /* Sfondo semitrasparente */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Stili per il paragrafo */
+.carousel-text p {
+  font-size: 1.5rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 250%); /* Centrato orizzontalmente e più in basso sull'asse Y */
+  background: rgba(0, 0, 0, 0.5); /* Sfondo semitrasparente */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Media Query per dispositivi mobili */
+@media (max-width: 768px) {
+  .carousel-text h1 {
+    font-size: 2rem; /* Ridurre la dimensione del testo su schermi piccoli */
+    top: 70px; /* Modificare la posizione verticale */
+    transform: translate(-50%, -250%); /* Posizionamento migliorato */
+  }
+
+  .carousel-text p {
+    font-size: 1.2rem; /* Ridurre la dimensione del testo */
+    transform: translate(-50%, 150%); /* Posizionamento migliorato */
+  }
+}
+
+/* Keyframe per l'animazione */
+@keyframes slide {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+/* Chi siamo */
+.about {
+  background-color: #f7f7f7;
+  padding: 40px 20px;
+  text-align: center;
+  
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  
+  
+  font-size: 20px;
+  
+}
+.about-content {
+  display: flex;
+  align-items: center; /* Allinea verticalmente al centro */
+  gap: 20px; /* Spazio tra testo e immagine */
+}
+
+.about-text {
+  flex: 1; /* Il testo occupa più spazio */
+}
+
+.about-image img {
+  width: 300px; /* Dimensiona l'immagine */
+  max-width: 100%; /* Rende l'immagine responsiva */
+  border-radius: 10px; /* Aggiunge angoli arrotondati all'immagine */
+}
+/* Per dispositivi con larghezza massima di 768px */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* Dispone testo e immagine uno sopra l'altro */
+    text-align: center; /* Centra il contenuto */
+  }
+
+  .about-image img {
+    width: 100%; /* L'immagine occupa tutta la larghezza */
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+/* Per dispositivi con larghezza massima di 1024px */
+@media (max-width: 1024px) {
+  .about-content {
+    flex-direction: column; /* Dispone testo e immagine uno sopra l'altro */
+    text-align: center; /* Centra il contenuto */
+  }
+
+  .about-image img {
+    width: 100%; /* L'immagine occupa tutta la larghezza */
+    max-width: 400px; /* Limita la larghezza massima */
+    margin: 0 auto; /* Centra l'immagine */
+  }
+
+  .about-text {
+    font-size: 1rem; /* Dimensione leggibile del font */
+    margin-bottom: 20px; /* Spazio sotto il testo */
+  }
+}
+
+/* Servizi */
+.services {
+  padding: 40px 20px;
+}
+
+.service-card {
+  text-align: center;
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  height: auto; /* Permette l'adattamento dinamico */
+  min-height: 250px; /* Imposta una dimensione minima */
+  overflow: visible; /* Assicura che il contenuto non venga tagliato */
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.service-icon img {
+  width: 50px;
+  margin-bottom: 15px;
+}
+
+.short-desc {
+  font-size: 14px;
+  color: #666;
+}
+
+.hover-desc {
+  position: absolute;
+  bottom: 20px;
+  left: 10px !important; /* Sposta più a sinistra */
+  right: auto !important; /* Rimuove il vincolo a destra */
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 5px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  text-align: left !important; /* Allinea il testo a sinistra */
+}
+
+.service-card:hover .hover-desc {
+  opacity: 1;
+  transform: translateY(0);
+  
+}
+.details {
+  text-align: center; /* Allinea il testo a sinistra */
+  padding-left: 10px; /* Sposta il testo verso sinistra aggiungendo margine interno */
+  margin-left: 0; /* Assicura che il margine esterno non influisca */
+  position: relative; /* Mantiene la posizione relativa per ulteriori aggiustamenti */
+  
+}
+
+.service-card {
+  position: relative; /* Mantiene il contenitore posizionato correttamente */
+}
+
+.service-card:hover .details {
+  opacity: 1;
+  transform: translateY(0); /* Appare normalmente senza scorrimento */
+  left: 0px; /* Imposta allineamento al bordo sinistro del contenitore */
+  max-height: 200px; /* Imposta un'altezza massima per il testo */
+  overflow-y: auto; /* Aggiunge uno scroll verticale se necessario */
+  padding: 10px;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.service-card {
+  width: calc(20% - 20px); /* Ridotto per lasciare spazio tra le card */
+  padding: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  background: #f9f9f9;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-width: 220px; /* Impostato un valore minimo per le card */
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-card i {
+  font-size: 3rem;
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.service-card .details {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  padding: 15px;
+  border-top: 2px solid #e0e0e0;
+  transition: bottom 0.3s ease;
+}
+
+.service-card:hover .details {
+  bottom: 0;
+}
+
+.service-card button {
+  background: #28a745;
+  color: #ffffff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.service-card button:hover {
+  background: #218838;
+}
+
+/* Responsività: quando lo schermo è più piccolo (ad esempio, su dispositivi mobili) */
+@media (max-width: 768px) {
+  .service-card {
+    width: calc(50% - 20px); /* Due card per riga su schermi più piccoli */
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card {
+    width: 100%; /* Una card per riga su schermi ancora più piccoli */
+  }
+}
+/* Galleria */
+.gallery {
+  padding: 40px 20px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  display: none; /* Nasconde tutte le immagini inizialmente */
+}
+
+.gallery-grid img.visible {
+  display: block; /* Mostra solo le immagini visibili */
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.1);
+}
+
+/* Pulsante "Mostra Altro" */
+button#load-more {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button#load-more:hover {
+  background-color: #218838;
+}
+
+
+.location {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f8f8f8;
+}
+
+.location h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.location p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.map-container {
+  margin-top: 2rem;
+  border-radius: 10px;
+  overflow: hidden; /* Per assicurare bordi arrotondati */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra leggera */
+  width: 600px; /* Larghezza della mappa */
+  height: 400px; /* Altezza della mappa */
+  margin: 0 auto; /* Centra la mappa */
+}
+
+.map-container iframe {
+  width: 100%; /* L'iframe si adatta alla dimensione del contenitore */
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* Media Query per schermi piccoli */
+@media (max-width: 768px) {
+  .map-container {
+    width: 100%; /* La mappa occupa il 100% della larghezza */
+    height: 300px; /* Altezza ridotta per schermi piccoli */
+  }
+
+  .location h2 {
+    font-size: 1.5em;
+  }
+
+  .location p {
+    font-size: 1em;
+  }
+}
+
+/* contatti */
+.contacts {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.contacts h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.contacts p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+
+.contact-list i {
+  font-size: 1.5em;
+  color: #0073e6;
+}
+
+.contact-list a {
+  color: #0073e6;
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+/* Prenotazioni */
+.booking {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative; /* Necessario per posizionare i loghi ai lati */
+}
+
+/* Titolo */
+.booking h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Paragrafo descrittivo */
+.booking p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Etichette */
+.booking label {
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+  text-align: left;
+}
+
+/* Campi di input e select */
+.booking input,
+.booking select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Bottone di prenotazione */
+.booking button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Hover per il bottone di prenotazione */
+.booking button:hover {
+  background-color: #0056b3;
+}
+
+/* Bottone per contatti */
+#contact {
+  background-color: #28a745;
+  margin-top: 15px;
+}
+
+/* Hover per il bottone di contatto */
+#contact:hover {
+  background-color: #218838;
+}
+
+/* Loghi ai lati con animazione */
+/* Loghi in posizioni asimmetriche */
+.logo {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0; /* Inizialmente invisibile */
+  animation: fadeInOut 6s infinite alternate; /* Animazione di apparire e scomparire */
+}
+
+/* Loghi a sinistra e destra */
+.logo-left {
+  left: -300px; /* Più a sinistra */
+  bottom: 2%; /* Posizione più bassa */
+  background-image: url('immagini/logo.jpg');
+  animation-delay: 0s;
+}
+
+.logo-right {
+  right: -300px; /* Più a destra */
+  bottom: 2%; /* Posizione più bassa */
+  background-image: url('immagini/logo.jpg');
+  animation-delay: 2s;
+}
+
+/* Altri loghi */
+.logo-top-left {
+  left: -400px;
+  top: 10%;
+  background-image: url('immagini/logo.jpg');
+  animation-delay: 4s;
+}
+
+.logo-top-right {
+  right: -400px;
+  top: 10%;
+  background-image: url('immagini/logo.jpg');
+  animation-delay: 6s;
+}
+
+.logo-bottom-left {
+  left: -500px;
+  bottom: 20%; /* Più lontano dal bordo inferiore */
+  background-image: url('immagini/logo.jpg');
+  animation-delay: 8s;
+}
+
+.logo-bottom-right {
+  right: -500px;
+  bottom: 20%; /* Più lontano dal bordo inferiore */
+  background-image: url('immagini/logo.jpg');
+  animation-delay: 10s;
+}
+
+/* Animazione di apparire e scomparire */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0; /* Inizialmente invisibile */
+  }
+  50% {
+    opacity: 1; /* Diventa visibile */
+  }
+  100% {
+    opacity: 0; /* Torna invisibile */
+  }
+}
+
+/* Nascondere loghi su schermi piccoli */
+@media (max-width: 768px) {
+  .logo {
+    display: none; /* Nascondi tutti i loghi su dispositivi più piccoli */
+  }
+}
+
+/* Adattamento su schermi medi (tra 769px e 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .logo {
+    width: 100px; /* Ridimensiona i loghi */
+    height: 100px;
+  }
+  .logo-left {
+    left: -150px;
+    bottom: 10%; /* Abbassato più in basso */
+  }
+  .logo-right {
+    right: -150px;
+    bottom: 10%; /* Abbassato più in basso */
+  }
+  .logo-top-left {
+    left: -200px;
+    top: 15%;
+  }
+  .logo-top-right {
+    right: -200px;
+    top: 15%;
+  }
+  .logo-bottom-left {
+    left: -200px;
+    bottom: 20%;
+  }
+  .logo-bottom-right {
+    right: -200px;
+    bottom: 20%;
+  }
+}
+
+/* Adattamento per schermi grandi (oltre 1024px) */
+@media (min-width: 1025px) {
+  .logo {
+    width: 150px; /* Dimensione standard dei loghi */
+    height: 150px;
+  }
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+}
