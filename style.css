@@ -102,10 +102,10 @@ h2 {
   .navbar .nav-links {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 115%;
     position: absolute;
     top: 40px;
-    left: -20px;
+    left: -30px;
     background-color: #5a8c5a;
     z-index: 1;
     text-align: center;
@@ -170,36 +170,52 @@ h2 {
 .carousel-text h1 {
   font-size: 3rem;
   position: absolute;
-  top: 5%; /* Posiziona l'h1 più in alto, puoi regolare la percentuale */
+  top: 5%; /* L'h1 è appena sotto la navbar */
   left: 50%;
-  transform: translate(-50%, -380%); /* Centrato orizzontalmente e più in alto sull'asse Y */
+  transform: translate(-50%, -380%); /* Più in alto rispetto al centro */
   background: rgba(0, 0, 0, 0.5); /* Sfondo semitrasparente */
   padding: 10px;
   border-radius: 10px;
+  max-width: 90%; /* Assicura che non vada fuori schermo */
+  word-wrap: break-word; /* Gestione del testo lungo */
 }
 
-/* Stili per il paragrafo */
 .carousel-text p {
   font-size: 1.5rem;
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 250%); /* Centrato orizzontalmente e più in basso sull'asse Y */
+  transform: translate(-50%, 250%); /* Ben separato dall'h1 */
   background: rgba(0, 0, 0, 0.5); /* Sfondo semitrasparente */
   padding: 10px;
   border-radius: 10px;
+  max-width: 90%; /* Limita la larghezza */
+  word-wrap: break-word; /* Gestione del testo lungo */
 }
 
 /* Media Query per dispositivi mobili */
 @media (max-width: 768px) {
   .carousel-text h1 {
-    font-size: 2rem; /* Ridurre la dimensione del testo su schermi piccoli */
-    top: 70px; /* Modificare la posizione verticale */
-    transform: translate(-50%, -250%); /* Posizionamento migliorato */
+    font-size: 2rem; /* Riduzione del font */
+    top: 5%; /* Mantieni il posizionamento relativo alla navbar */
+    transform: translate(-50%, -200%); /* Rimane più visibile */
   }
 
   .carousel-text p {
-    font-size: 1.2rem; /* Ridurre la dimensione del testo */
-    transform: translate(-50%, 150%); /* Posizionamento migliorato */
+    font-size: 1.2rem; /* Riduzione del font per schermi piccoli */
+    transform: translate(-50%, 150%); /* Posizione coerente con l'h1 */
+  }
+}
+
+/* Media Query per schermi ultra piccoli */
+@media (max-width: 480px) {
+  .carousel-text h1 {
+    font-size: 1.8rem; /* Ancora più piccolo per dispositivi molto piccoli */
+    transform: translate(-50%, -150%); /* Mantiene visibilità */
+  }
+
+  .carousel-text p {
+    font-size: 1rem; /* Testo del paragrafo più compatto */
+    transform: translate(-50%, 100%); /* Più vicino per spazi stretti */
   }
 }
 
